@@ -7,8 +7,8 @@ import java.util.Random;
  * @version 1.0
  * 解题思路: 欧货相同为0,0和任何数异或都还得本身
  * a^b^c^a^b^c^d,利用交换律可以得到(a,a),(b,b),(c,c)异或为0,0和d异或就为d，这样就把d给找出来了
-public
- */ class exercise1 {
+ *  */
+public class exercise1 {
     public static void main(String[] args) {
         int N = 1001;
         int[] arr = new int[N];
