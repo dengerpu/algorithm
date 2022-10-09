@@ -15,6 +15,9 @@ public class exercise1 {
         String str = "abcd";
         System.out.println(reverse(str, str.length() - 1));
 
+        System.out.println(f4(5));
+
+        System.out.println(gcd(12,8));
     }
 
     /***
@@ -64,5 +67,31 @@ public class exercise1 {
             return "" + src.charAt(0);
         }
         return src.charAt(end) + reverse(src, end-1);
+    }
+
+    /***
+     * 斐波那契数
+     * @param n
+     * @return
+     */
+    static int f4(int n) {
+        if(n == 1 || n == 2) {
+            return 1;
+        }else {
+            return f4(n-1) + f4(n-2);
+        }
+    }
+
+    /***
+     * 最大公约数
+     * @param m
+     * @param n
+     * @return
+     */
+    static int gcd(int m, int n) {
+        if (n == 0) {
+            return m;
+        }
+        return gcd(n, m % n);
     }
 }
