@@ -9,6 +9,12 @@ public class exercise1 {
     public static void main(String[] args) {
         System.out.println(f1(5));
         f2(1,9);
+        int[] arr = {1,2,3,4,5};
+        System.out.println(f3(arr, 0));
+
+        String str = "abcd";
+        System.out.println(reverse(str, str.length() - 1));
+
     }
 
     /***
@@ -33,5 +39,30 @@ public class exercise1 {
         }
         System.out.println(i++);
         f2(i,j);
+    }
+
+    /**
+     * 递归求数组之和
+     * @param arr
+     * @param start
+     * @return
+     */
+    static int f3(int[] arr, int start) {
+        if(start == arr.length -1 ) {
+            return arr[start];
+        }
+        return arr[start] + f3(arr, start+1);
+    }
+
+    /***
+     * 递归翻转字符串
+     * 思路: 最后一个字母加其他几个翻转
+     * @param
+     */
+    static String reverse(String src,  int end) {
+        if(end == 0) {
+            return "" + src.charAt(0);
+        }
+        return src.charAt(end) + reverse(src, end-1);
     }
 }
