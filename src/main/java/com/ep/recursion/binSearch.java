@@ -10,7 +10,6 @@ public class binSearch {
         int[] arr = {1,5,6,8,9,12,15,16};
         System.out.println(binSearch(arr, 0, arr.length - 1, 5));
     }
-
     static int binSearch( int[] arr, int low, int high, int key) {
         if( low > high) {
             return -1;
@@ -24,5 +23,4 @@ public class binSearch {
         } else
             return mid;
     }
-
 }
