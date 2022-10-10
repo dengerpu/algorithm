@@ -1,5 +1,7 @@
 package com.ep.recursion;
 
+import java.util.Arrays;
+
 /***
  * @author dep
  * @version 1.0
@@ -18,6 +20,10 @@ public class exercise1 {
         System.out.println(f4(5));
 
         System.out.println(gcd(12,8));
+
+        int[] arr2 = {1,5,6,9,8,7,5,3,6,9,10};
+        insertSort(arr2, arr2.length-1);
+        System.out.println(Arrays.toString(arr2));
     }
 
     /***
@@ -93,5 +99,26 @@ public class exercise1 {
             return m;
         }
         return gcd(n, m % n);
+    }
+
+    /***
+     * 递归插入排序
+     * @param arr
+     * @param k
+     */
+    static void insertSort(int[] arr, int k) {
+        if(k==0) {
+            return;
+        }
+        // 对前k-1个元素排序
+        insertSort(arr, k -1 );
+        // 把位置为k的元素插入到前面部分
+        int x = arr[k];
+        int index = k - 1 ;
+        while (index > -1 && x < arr[index]){
+            arr[index+1] = arr[index]; // 后移一位
+            index --;
+        }
+        arr[index+1] = x;
     }
 }
