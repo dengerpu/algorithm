@@ -10,7 +10,6 @@ import java.util.Scanner;
  * 走完楼梯的方式。
  */
 public class exercise3 {
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         while (true) {
@@ -18,7 +17,6 @@ public class exercise3 {
             System.out.println(f(n));
         }
     }
-
     static int f(int n) {
         if(n == 0) return 1;
         if(n == 1) return 1;
