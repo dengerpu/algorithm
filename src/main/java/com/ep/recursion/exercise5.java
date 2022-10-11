@@ -19,6 +19,9 @@ public class exercise5 {
             int indexOfMid = begin + ((end - begin) >> 1);
             while(arr[indexOfMid].equals("")) {
                 indexOfMid ++;
+                if (indexOfMid > end) {
+                    return -1;
+                }
             }
             if(arr[indexOfMid].compareTo(p) > 0) {
                 end = indexOfMid - 1;
