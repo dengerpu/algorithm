@@ -1,4 +1,4 @@
-package com.ep.recursion;
+package com.ep.example;
 
 /***
  * @author dep
@@ -7,7 +7,7 @@ package com.ep.recursion;
  * 把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。输入一个递增排序的数组的一个旋转，输出旋转数组的最小元素。
  * 例如数组{3,4,5,1,2}为{1,2,3,4,5}的-个旋转，该数组的最小值为1.
  */
-public class exercise4 {
+public class exercise1 {
     public static void main(String[] args) {
         int arr[] = {3,4,5,1,2};
         System.out.println(min(arr));

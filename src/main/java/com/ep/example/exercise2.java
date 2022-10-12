@@ -1,4 +1,4 @@
-package com.ep.recursion;
+package com.ep.example;
 
 /***
  * @author dep
@@ -6,7 +6,7 @@ package com.ep.recursion;
  * 在有空字符串的有序字符串数组中查找
  * 有个排序后的字符串数组，其中散布着一些空字符串，编写一个方法，找出给定字符串（肯定不是空字符串）的索引。
  */
-public class exercise5 {
+public class exercise2 {
     public static void main(String[] args) {
         String[] strs = {"a","","ab","b","","cc","cd","dd"};
         String p = "cc";
