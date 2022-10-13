@@ -5,9 +5,9 @@ import java.util.Arrays;
 /***
  * @author dep
  * @version 1.0
- * 快速排序单项扫描法
+ * 快速排序双向扫描
  */
-public class exercise5 {
+public class exercise6 {
     public static void main(String[] args) {
         int[] arr = {5,1,6,8,9,10,2,3,11};
         quickSort(arr,0, arr.length-1);
@@ -15,24 +15,24 @@ public class exercise5 {
     }
     public static void quickSort(int[] A, int p, int r) {
         if(p < r) {
-            int q = partition(A,p,r);
+            int q = partition2(A,p,r);
             quickSort(A,p,q-1); // 左侧快速排序
             quickSort(A,q+1,r); // 右侧快速排序
         }
     }
-    public static int partition(int[] arr, int p, int r) {
+    public static int partition2(int[] arr, int p, int r) {
         int pivot = arr[p];
-        int scanner = p + 1; // 扫描指针
+        int left = p + 1; // 扫描指针
         int right = r; // 右侧指针
-        while(scanner <= right) {
-            if(arr[scanner] < pivot) {
-                scanner ++ ;
-            }else {
-                // 找到左侧大的和右侧进行交换
-                swap(arr, scanner, right);
-                right--;
+        while(left <= right) {
+           // left不停往右走，直到遇到大于主元的元素
+            while(left <= right && arr[left] <= pivot) left++; // 循环退出时，left一定是指向第一个大于主元的位置
+            while(left <= right && arr[right] > pivot) right--; // 循环退出时，right一定是指向最后一个小于等于主元素的
+            if(left < right) {
+                swap(arr, left, right);
             }
         }
+        // while退出时，两者交错，且right指向的最后一个小于等于主元的位置，也就是主元应该呆的位置
         swap(arr, p, right);
         return right;
     }
