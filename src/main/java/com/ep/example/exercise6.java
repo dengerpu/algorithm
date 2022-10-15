@@ -26,8 +26,8 @@ public class exercise6 {
         int right = r; // 右侧指针
         while(left <= right) {
            // left不停往右走，直到遇到大于主元的元素
-            while(left <= right && arr[left] <= pivot) left++; // 循环退出时，left一定是指向第一个大于主元的位置
-            while(left <= right && arr[right] > pivot) right--; // 循环退出时，right一定是指向最后一个小于等于主元素的
+            if(left <= right && arr[left] <= pivot) left++; // 循环退出时，left一定是指向第一个大于主元的位置
+            if(left <= right && arr[right] > pivot) right--; // 循环退出时，right一定是指向最后一个小于等于主元素的
             if(left < right) {
                 swap(arr, left, right);
             }
