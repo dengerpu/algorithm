@@ -31,6 +31,7 @@ public class exercise10 {
         }else if( qk > k) {
             return selectK(arr, p, q-1, k);
         } else {
+            // 右侧查找的应该是第k-qk个
             return selectK(arr, q+1, r, k - qk);
         }
     }
