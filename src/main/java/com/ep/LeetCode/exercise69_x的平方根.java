@@ -4,7 +4,7 @@ package com.ep.LeetCode;
  * @author dep
  * @version 1.0
  */
-public class exercise_69x的平方根 {
+public class exercise69_x的平方根 {
     // 袖珍计算器算法
     public static int mySqrt(int x) {
         if (x == 0 ){
