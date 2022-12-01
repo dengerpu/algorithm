@@ -15,7 +15,7 @@ public class exercise168_Excel表列名称 {
         }
         return stringBuffer.reverse().toString();
     }
-    
+
     public static String convertTotitle(int columnNumber) {
         StringBuffer stringBuffer = new StringBuffer();
         while (columnNumber > 0) {
