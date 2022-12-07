@@ -93,7 +93,7 @@ public class exercise206_反转链表 {
         }
         //递归传入下一个节点，目的是为了到达最后一个节点
         // 返回的始终是原链表的最后一个结点
-        ListNode newHead = reverseList(head.next);
+        ListNode newHead = reverseList3(head.next);
          /*
             第一轮出栈，head为5，head.next为空，返回5
             第二轮出栈，head为4，head.next为5，执行head.next.next=head也就是5.next=4，
