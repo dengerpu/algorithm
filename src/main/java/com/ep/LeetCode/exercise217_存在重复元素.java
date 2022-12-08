@@ -35,6 +35,5 @@ public class exercise217_存在重复元素 {
     public static void main(String[] args) {
         int[] nums = {0,3,0};
         System.out.println(containsDuplicate(nums));
-
     }
 }
