@@ -18,5 +18,4 @@ public class exercise263_丑数 {
         }
         return n == 1;
     }
-
 }
