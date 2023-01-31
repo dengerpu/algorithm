@@ -5,7 +5,7 @@ package com.ep.LeetCode;
  * @version 1.0
  * @date 2023-01-31 10:11
  */
-public class exerciese563_二叉树的坡度 {
+public class exercise563_二叉树的坡度 {
       public class TreeNode {
           int val;
           TreeNode left;
