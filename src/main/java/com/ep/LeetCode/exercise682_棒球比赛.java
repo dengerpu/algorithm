@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * @date 2023-02-13 11:15
  */
 public class exercise682_棒球比赛 {
-    public int calPoints(String[] operations) {
+    public static int calPoints(String[] operations) {
         int ret = 0;
         ArrayList<Integer> list = new ArrayList<>();
        for (String op : operations) {
@@ -20,7 +20,8 @@ public class exercise682_棒球比赛 {
                    break;
                case 'D':
                    ret += 2*list.get(n-1);
-                   list.add(2*list.get(n-2));
+                   list.add(2*list.get(n-1));
+                   break;
                case 'C':
                    ret -= list.get(n-1);
                    list.remove(n-1);
@@ -32,5 +33,10 @@ public class exercise682_棒球比赛 {
            }
        }
        return ret;
+    }
+
+    public static void main(String[] args) {
+        String[] ops = {"5","2","C","D","+"};
+        System.out.println(calPoints(ops));
     }
 }
