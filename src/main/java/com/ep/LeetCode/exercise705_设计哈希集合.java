@@ -11,10 +11,10 @@ import java.util.List;
  * @date 2023-02-22 9:00
  */
 public class exercise705_设计哈希集合 {
+
     class MyHashSet {
         private static final int BASE = 769;
         private LinkedList[] data;
-
         public MyHashSet() {
             data = new LinkedList[BASE];
             for (int i = 0; i < BASE; i++) {
@@ -57,8 +57,8 @@ public class exercise705_设计哈希集合 {
             }
             return false;
         }
-
-        private static int hash(int key) {
+//        private static int hash(int key) {
+        private int hash(int key) {
             return key % BASE;
         }
     }
