@@ -7,7 +7,7 @@ import java.util.Scanner;
  * @version 1.0
  * @date 2023-03-03 14:44
  */
-public class AcWing_788_逆序对的数量 {
+public class AcWing788_逆序对的数量 {
     static int result = 0;
     public static void merge_sort(int[] nums, int l , int r) {
         if (l >= r) return;
