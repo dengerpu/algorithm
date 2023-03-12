@@ -36,8 +36,8 @@ public class exercise7_15_三数之和 {
                     list.add(nums[right]);
                     result.add(list);
                     // 对b和c去重
-                    while (nums[left] == nums[left + 1]) left++;
-                    while (nums[right] == nums[right - 1]) right--;
+                    while (right > left && nums[left] == nums[left + 1]) left++;
+                    while (right  > left && nums[right] == nums[right - 1]) right--;
 
                     // 找到答案，双指针同时收缩
                     left++;
