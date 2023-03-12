@@ -17,6 +17,7 @@ public class exercise8_18_四数之和 {
         for (int i = 0; i < n; i++) {
             // 排序后的第一个结果如果大于target，就没有结果（应该去掉）
 //            if (nums[i] > target) return result;
+            if (nums[i]  > 0 && nums[i] > target) return result;
             // 去重a
             if (i > 0 && nums[i] == nums[i-1]) continue;
             for (int j = i+1; j < n; j++) {
@@ -30,12 +31,12 @@ public class exercise8_18_四数之和 {
                     } else if (sum < target) {
                         left++;
                     }else {
-                        ArrayList<Integer> list = new ArrayList<>();
-                        list.add(nums[i]);
-                        list.add(nums[j]);
-                        list.add(nums[left]);
-                        list.add(nums[right]);
-                        result.add(list);
+//                        ArrayList<Integer> list = new ArrayList<>();
+//                        list.add(nums[i]);
+//                        list.add(nums[j]);
+//                        list.add(nums[left]);
+//                        list.add(nums[right]);
+                        result.add(Arrays.asList(nums[i],nums[j],nums[left],nums[right]));
                         // 对c和d去重
                         while (right > left && nums[left] == nums[left+1]) left++;
                         while (right > left && nums[right] == nums[right-1]) right--;
