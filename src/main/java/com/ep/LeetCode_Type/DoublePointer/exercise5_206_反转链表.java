@@ -25,4 +25,15 @@ public class exercise5_206_反转链表 {
         }
         return prev;
     }
+    // 递归
+    public static ListNode reverseList1(ListNode head) {
+          return reverse(null, head);
+    }
+    public static ListNode reverse(ListNode prev, ListNode curr) {
+          if (curr == null) return prev;
+          ListNode temp = curr.next;
+          curr.next = prev;
+          return reverse(curr, temp);
+    }
+    
 }
