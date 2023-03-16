@@ -3,14 +3,13 @@ package com.ep.AcWing;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 
 /***
  * @author dep
  * @version 1.0
  * @date 2023-03-16 10:51
  */
-public class AcWing_798_差分矩阵 {
+public class AcWing798_差分矩阵 {
     static int N = 1010;
     static int[][] A = new int[N][N];
     static int[][] B = new int[N][N];
