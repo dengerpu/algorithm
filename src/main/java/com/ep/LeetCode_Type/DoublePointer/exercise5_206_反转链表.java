@@ -35,5 +35,5 @@ public class exercise5_206_反转链表 {
           curr.next = prev;
           return reverse(curr, temp);
     }
-    
+
 }
