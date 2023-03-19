@@ -1,4 +1,4 @@
-package com.ep.LeetCode_Type.String;
+package com.ep.LeetCode_Type.DoublePointer.String;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
