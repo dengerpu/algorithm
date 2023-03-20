@@ -13,7 +13,7 @@ public class AcWing802_区间和 {
     static int[] s = new int[N];
     static HashSet<Integer> hashSet = new HashSet<>();
     static int[] alls; // 存储坐标
-    static int[][] adds; 
+    static int[][] adds;
     static int[][] query;
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
