@@ -45,6 +45,6 @@ public class exercise4_1047_删除字符串中的所有相邻重复项 {
 
     public static void main(String[] args) {
         String str = "aabbddcghhjj";
-        System.out.println(removeDuplicates(str));
+        System.out.println(removeDuplicates2(str));
     }
 }
