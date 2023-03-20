@@ -26,6 +26,23 @@ public class exercise4_1047_删除字符串中的所有相邻重复项 {
         return sb.reverse().toString();
     }
 
+    // 双指针
+    public static String removeDuplicates2(String s) {
+        char[] ch = s.toCharArray();
+        int fast = 0;
+        int slow = 0;
+        while (fast < s.length()) {
+            ch[slow] = ch[fast];
+            if (slow > 0 && ch[slow] == ch[slow - 1]) {
+                slow--;
+            } else {
+                slow++;
+            }
+            fast++;
+        }
+        return new String(ch,0,slow);
+    }
+
     public static void main(String[] args) {
         String str = "aabbddcghhjj";
         System.out.println(removeDuplicates(str));
