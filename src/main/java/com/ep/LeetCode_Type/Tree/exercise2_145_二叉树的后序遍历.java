@@ -8,7 +8,7 @@ import java.util.List;
  * @version 1.0
  * @date 2023-03-22 9:44
  */
-public class exercise1_145_二叉树的后序遍历 {
+public class exercise2_145_二叉树的后序遍历 {
     public class TreeNode {
         int val;
         TreeNode left;
