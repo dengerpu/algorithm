@@ -2,6 +2,7 @@ package com.ep.LeetCode_Type.Tree;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 /***
  * @author dep
@@ -38,5 +39,18 @@ public class exercise1_144_二叉树的前序遍历 {
         res.add(root.val);
         preorder(root.left,res);
         preorder(root.right,res);
+    }
+
+    // 先序遍历（迭代法）
+    public void preorderTree(TreeNode root,List<Integer> res) {
+        if (root == null ) return;
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            TreeNode node = stack.pop();
+            res.add(node.val);
+            if (node.right != null) stack.push(node.right);
+            if (node.left != null) stack.push(node.left);
+        }
     }
 }
