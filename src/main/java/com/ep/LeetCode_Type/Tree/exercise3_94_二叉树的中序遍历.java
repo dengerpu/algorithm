@@ -1,7 +1,10 @@
 package com.ep.LeetCode_Type.Tree;
 
+import sun.reflect.generics.tree.Tree;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 /***
  * @author dep
@@ -32,11 +35,27 @@ public class exercise3_94_二叉树的中序遍历 {
         inorder(root,res);
         return res;
     }
-    // 后序遍历
+    // 中序遍历
     public void  inorder(TreeNode root,List<Integer> res) {
         if (root == null) return;
         inorder(root.left,res);
         res.add(root.val);
         inorder(root.right,res);
+    }
+
+    // 中序遍历（迭代）
+    public void inorderTree(TreeNode root,List<Integer> res) {
+        TreeNode curr = root;
+        Stack<TreeNode> stack = new Stack();
+        while (curr != null || !stack.isEmpty()) {
+            if (curr != null) { // 指针来访问节点，访问到最底层
+                stack.push(curr); // 将访问的节点放进栈
+                curr = curr.left;
+            } else {  // 此时已经走到了最左边的节点
+                curr = stack.pop();
+                res.add(curr.val);
+                curr = curr.right;
+            }
+        }
     }
 }
