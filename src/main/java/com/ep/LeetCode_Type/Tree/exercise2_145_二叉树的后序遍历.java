@@ -1,7 +1,9 @@
 package com.ep.LeetCode_Type.Tree;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Stack;
 
 /***
  * @author dep
@@ -38,5 +40,20 @@ public class exercise2_145_二叉树的后序遍历 {
         postorder(root.left,res);
         postorder(root.right,res);
         res.add(root.val);
+    }
+
+    // 后序遍历（迭代）
+    public void postorderTree(TreeNode root, List<Integer> res) {
+        if(root == null) return;
+        TreeNode curr;
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            curr = stack.pop();
+            res.add(curr.val);
+            if (curr.left != null) stack.push(curr.left);
+            if (curr.right != null) stack.push(curr.right);
+        }
+        Collections.reverse(res);
     }
 }
