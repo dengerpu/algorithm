@@ -1,4 +1,4 @@
-package com.ep.AcWing;
+package com.ep.AcWing.basic;
 
 import java.sql.SQLOutput;
 import java.util.Arrays;

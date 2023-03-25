@@ -1,4 +1,4 @@
-package com.ep.AcWing;
+package com.ep.AcWing.basic;
 
 import java.io.IOException;
 import java.util.Scanner;

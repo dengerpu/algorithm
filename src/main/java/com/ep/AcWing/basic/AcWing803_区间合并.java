@@ -1,6 +1,4 @@
-package com.ep.AcWing;
-
-import com.sun.org.apache.bcel.internal.generic.IF_ACMPEQ;
+package com.ep.AcWing.basic;
 
 import java.util.*;
 
