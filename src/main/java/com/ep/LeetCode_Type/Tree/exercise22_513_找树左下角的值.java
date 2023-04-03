@@ -1,6 +1,5 @@
 package com.ep.LeetCode_Type.Tree;
 
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -9,7 +8,7 @@ import java.util.Queue;
  * @version 1.0
  * @date 2023-04-02 10:16
  */
-public class exercise_513_找树左下角的值 {
+public class exercise22_513_找树左下角的值 {
     public class TreeNode {
         int val;
         TreeNode left;
