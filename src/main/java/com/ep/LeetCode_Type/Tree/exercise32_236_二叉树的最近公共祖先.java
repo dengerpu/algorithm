@@ -29,6 +29,5 @@ public class exercise32_236_二叉树的最近公共祖先 {
         } else {
             return null;
         }
-
     }
 }
