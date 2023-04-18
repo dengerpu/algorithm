@@ -85,4 +85,44 @@ public class exercise35_450_删除二叉搜索树中的节点 {
         if (root.val < key) root.right = deleteNode(root.right, key);
         return root;
     }
+
+    // 迭代
+    // 1.删除的节点是左叶子结点
+    // 2.删除的节点是右叶子结点
+    // 3.删除的节点是根节点
+    // 4.删除的节点是左节点
+    // 5.删除的节点是右结点
+    // 将目标节点（删除节点）的左子树放到 目标节点的右子树的最左面节点的左孩子位置上
+    // 并返回目标节点右孩子为新的根节点
+    public TreeNode deleteOneNode(TreeNode target) {
+        if (target == null) return target;
+        // 右子树为空，就返回左结点。（也包含了左子树为空，返回空）直接pre指向 target.left （实现了删除target）
+        if (target.right == null) return target.left;
+        // 找到右子树最左结点
+        TreeNode curr = target.right;
+        while (curr.left != null) {
+            curr = curr.left;
+        }
+        curr.left = target.left;
+        return target.right;
+    }
+    public TreeNode deleteNode2(TreeNode root, int key) {
+        TreeNode curr = root;
+        TreeNode pre = null;
+        while (curr != null) {
+            if (curr.val == key) break;
+            pre = curr;
+            if (curr.val < key) curr = curr.right;
+            else curr = curr.left;
+        }
+        if (pre == null) { // 要删除的节点是根节点
+            return deleteOneNode(curr);
+        }
+        if (pre.val < key) { // 删除的是右节点
+            pre.right = deleteOneNode(curr);
+        } else {
+            pre.left = deleteOneNode(curr);
+        }
+        return root;
+    }
 }
