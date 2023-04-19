@@ -52,7 +52,7 @@ public class exercise36_669_修剪二叉搜索树 {
         // 此时root已经在[L, R] 范围内，处理左孩子元素小于L的情况
         while (curr != null) {
             while (curr.left != null && curr.left.val < low) {
-                curr.left = curr.left.right;
+                curr.left = curr.left.right; // curr的左指针指向curr.left的右子树
             }
             curr = curr.left;
         }
