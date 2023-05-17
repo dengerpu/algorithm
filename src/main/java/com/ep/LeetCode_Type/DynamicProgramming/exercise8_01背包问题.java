@@ -1,5 +1,7 @@
 package com.ep.LeetCode_Type.DynamicProgramming;
 
+import java.util.Arrays;
+
 /***
  * @author dep
  * @version 1.0
@@ -15,6 +17,7 @@ public class exercise8_01背包问题 {
     public static void testWeightBagProblem(int[] weight, int[] value, int bagSize) {
         int m = weight.length;
         int n = bagSize + 1;
+        // dp[i][j] 表示从下标为[0-i]的物品里任意取，放进容量为j的背包，价值总和最大是多少。
         int[][] dp = new int[m][n]; // dp[i][j], 0-i个物品，j背包的重量
         // 数组初始化
 //        for (int i = 0; i < m; i++) { // 背包的容量为0
@@ -50,6 +53,19 @@ public class exercise8_01背包问题 {
         }
     }
 
+    public static void testWeightBagProblem2(int[] weight, int[] value, int bagSize) {
+        int m = weight.length; // 物品的个数
+        int n = bagSize; // 背包的容量
+        int[] dp = new int[n + 1]; // dp[j] 表示背包容量为j时的最大价值
+        dp[0] = 0;
+        for (int i = 0; i < m; i++) { // 物品
+            for (int j = bagSize; j >= weight[i]; j--) { // 背包
+                dp[j] = Math.max(dp[j], dp[j - weight[i]] + value[i]);
+            }
+        }
+        System.out.println(Arrays.toString(dp));
+    }
+
     public static void main(String[] args) {
 //        int[] weight = {1,3,4};
 //        int[] value = {15,20,30};
@@ -58,5 +74,6 @@ public class exercise8_01背包问题 {
         int[] value = {2,4,4,5};
         int bagSize = 5;
         testWeightBagProblem(weight,value,bagSize);
+        testWeightBagProblem2(weight,value,bagSize);
     }
 }
